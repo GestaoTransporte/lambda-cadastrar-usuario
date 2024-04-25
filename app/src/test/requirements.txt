@@ -1,0 +1,7 @@
+aws-lambda-powertools
+pytest
+pytest-cov
+jmespath
+sqlalchemy
+pymysql
+boto3
