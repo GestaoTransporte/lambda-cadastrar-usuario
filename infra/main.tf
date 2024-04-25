@@ -2,7 +2,7 @@ module "lambda_function" {
   source = "terraform-aws-modules/lambda/aws"
 
   function_name = var.function_name
-  description   = ""
+  description   = "Lambda responsavel pelo cadastro de usuarios"
   handler       = var.handler
   runtime       = var.runtime
   publish       = true
