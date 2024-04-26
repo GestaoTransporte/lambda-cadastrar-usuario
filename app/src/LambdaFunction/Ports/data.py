@@ -2,9 +2,9 @@ import sqlalchemy as db
 from Models import data_models
 from sqlalchemy.orm import sessionmaker
 from aws_lambda_powertools import Logger
-from parameter_store import get_parameter
+import parameter_store
 
-stringConexao = get_parameter("connectionDbString")
+stringConexao = parameter_store.get_parameter("connectionDbString")
 
 engine = db.create_engine(stringConexao)
 
