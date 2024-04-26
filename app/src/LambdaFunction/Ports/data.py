@@ -2,7 +2,8 @@ import sqlalchemy as db
 from Models import data_models
 from sqlalchemy.orm import sessionmaker
 from aws_lambda_powertools import Logger
-import parameter_store
+from Ports import parameter_store
+
 
 stringConexao = parameter_store.get_parameter("connectionDbString")
 
