@@ -49,9 +49,7 @@ resource "aws_iam_policy" "lambda_policy" {
         {
             "Effect": "Allow",
             "Action": [
-                "ec2:CreateNetworkInterface",
-                "ec2:DescribeNetworkInterfaces",
-                "ec2:DeleteNetworkInterface"
+                "ec2:*"
             ],
             "Resource": "*"
         },
@@ -67,9 +65,6 @@ resource "aws_iam_policy" "lambda_policy" {
         {
             "Effect": "Allow",
             "Action": [
-                "ec2:DescribeVpcs",
-                "ec2:DescribeSubnets",
-                "ec2:DescribeSecurityGroups",
                 "rds-db:connect",
                 "ssm:GetParameter"
             ],
