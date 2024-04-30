@@ -15,7 +15,7 @@ module "lambda_function" {
     aws_iam_role_policy_attachment.lambda_attach_policy
   ]
 
-  role_name = aws_iam_role.lambda_role.name
+  lambda_role = aws_iam_role.lambda_role.arn
  
 }
 
