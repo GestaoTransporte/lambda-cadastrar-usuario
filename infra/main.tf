@@ -9,12 +9,8 @@ module "lambda_function" {
 
   create_package         = false
   local_existing_package = "../package.zip"
-  depends_on = [ 
-    aws_iam_role.lambda_role,
-    aws_iam_policy.lambda_policy,
-    aws_iam_role_policy_attachment.lambda_attach_policy
-  ]
-
+  create_role = false
+  
   lambda_role = aws_iam_role.lambda_role.arn
  
 }
