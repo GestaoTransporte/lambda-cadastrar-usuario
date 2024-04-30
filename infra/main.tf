@@ -70,7 +70,8 @@ resource "aws_iam_policy" "lambda_policy" {
                 "ec2:DescribeVpcs",
                 "ec2:DescribeSubnets",
                 "ec2:DescribeSecurityGroups",
-                "rds-db:connect"
+                "rds-db:connect",
+                "ssm:GetParameter"
             ],
             "Resource": "*"
         }
