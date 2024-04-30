@@ -11,7 +11,7 @@ module "lambda_function" {
   local_existing_package = "../package.zip"
 
   role_name = aws_iam_role.lambda_role.name
-
+  depends_on = [ aws_iam_policy.lambda_role ]
 }
 
 resource "aws_iam_role" "lambda_role" {
