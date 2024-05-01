@@ -2,6 +2,7 @@ from aws_lambda_powertools.event_handler import APIGatewayRestResolver
 from aws_lambda_powertools.utilities.typing import LambdaContext
 from aws_lambda_powertools import Logger
 from Ports import data, mapper
+import json
 
 logger = Logger()
 app = APIGatewayRestResolver()
@@ -13,6 +14,9 @@ def cadastro_usuario():
     usuario = mapper.mapear_usuario(body)
     data.cadastrar_usuario(usuario)
 
+    return json.dumps({
+        "statusCode": 201
+    })
 
 
 @logger.inject_lambda_context(log_event=True)

@@ -10,7 +10,15 @@ module "lambda_function" {
   create_package         = false
   local_existing_package = "../package.zip"
   create_role = false
+
+  layers = [
+    "arn:aws:lambda:sa-east-1:017000801446:layer:AWSLambdaPowertoolsPythonV2:69"
+  ]
   
+  vpc_subnet_ids = ["subnet-0e13d4a612afb7c96", "subnet-06a23ca8f4d1b65d8"]
+  vpc_security_group_ids = ["sg-0eff6708ec11ff3b5"]
+
+
   depends_on = [ 
     aws_iam_role.lambda_role,
     aws_iam_policy.lambda_policy,
